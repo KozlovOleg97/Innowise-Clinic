@@ -1,0 +1,26 @@
+﻿using Microsoft.AspNetCore.Authorization.Infrastructure;
+using System.Text.Json.Serialization;
+
+namespace AuthorizationAPI.Core.Account
+{
+    public class AuthenticationResponse
+    {
+        public string Id { get; set; }
+        public string UserName { get; set; }
+        public string Email { get; set; }
+        //public List<RolesAuthorizationRequirement> Roles { get; set; }
+        public List<string> Roles { get; set; }
+        public bool IsVerified { get; set; }
+        public bool HasError { get; set; }
+        public string? Error { get; set; }
+        public string? JWToken { get; set; }
+
+        [JsonIgnore]
+        public string? RefreshToken { get; set; }
+        public string? ImagePath { get; set; }
+        public string? FirstName { get; set; }
+        public string? LastName { get; set; }
+
+
+    }
+}
